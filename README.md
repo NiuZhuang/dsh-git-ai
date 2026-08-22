@@ -17,6 +17,15 @@ The package ships as a profile bundle: installing it and activating the patch is
 dsh plugin --profile web add dsh-hooks-git-ai
 ```
 
+> **pnpm ≥ 10 note:** `dsh plugin add` forwards to pnpm, and pnpm 10+ rejects adding to a
+> workspace root with `ERR_PNPM_ADDING_TO_ROOT`. dsh profiles are pnpm workspace roots by
+> design, so on machines with pnpm ≥ 10 use `-w` (or add `ignore-workspace-root-check: true`
+> to `~/.dsh/profiles/<profile>/pnpm-workspace.yaml` once):
+>
+> ```sh
+> dsh plugin --profile web add -w dsh-hooks-git-ai
+> ```
+
 `dsh plugin` forwards to pnpm inside your profile directory and auto-activates the bundle because the package declares `dsh.bundle`. Without the bundle mechanism (or to load it in a custom profile), add the row to your profile's `cordis.patch.yml`:
 
 ```yaml
