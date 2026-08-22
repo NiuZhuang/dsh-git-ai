@@ -1,0 +1,40 @@
+.gitignore
+  h_43eed51c24af83 1-6
+LICENSE
+  h_43eed51c24af83 1-21
+README.md
+  h_43eed51c24af83 1-96
+cordis.patch.yml
+  h_43eed51c24af83 1-6
+package.json
+  h_43eed51c24af83 1-68
+pnpm-lock.yaml
+  h_43eed51c24af83 1-1475
+pnpm-workspace.yaml
+  h_43eed51c24af83 1-27
+src/index.ts
+  h_43eed51c24af83 1-237
+src/invariant.ts
+  h_43eed51c24af83 1-30
+tests/invariant.spec.ts
+  h_43eed51c24af83 1-22
+tests/mock-adapter.ts
+  h_43eed51c24af83 1-75
+tests/plugin.spec.ts
+  h_43eed51c24af83 1-364
+tsconfig.json
+  h_43eed51c24af83 1-26
+vitest.config.ts
+  h_43eed51c24af83 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "c9091e760f837f6613548a0ac033c237ab896881",
+  "prompts": {},
+  "humans": {
+    "h_43eed51c24af83": {
+      "author": "Zhuang NIU <niu-zhuang@outlook.com>"
+    }
+  }
+}
