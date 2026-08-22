@@ -1,0 +1,19 @@
+README.md
+  s_1d4c6b58b8a978::t_4eb8a0742f7622 20-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "c33bbc3b4559b274c92e8327ab698e529fa8b942",
+  "prompts": {},
+  "sessions": {
+    "s_1d4c6b58b8a978": {
+      "agent_id": {
+        "tool": "deepseek-harness",
+        "id": "session-a0f92226-ecc5-4300-a943-bdc263a9477c",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhuang NIU <niu-zhuang@outlook.com>"
+    }
+  }
+}
