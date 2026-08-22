@@ -1,0 +1,6 @@
+# The dsh-hooks-git-ai bundle patch: inserted over the profile root so the
+# plugin activates automatically when installed via `dsh plugin add`.
+
+- insert:
+    - id: hooks-git-ai
+      name: dsh-hooks-git-ai
