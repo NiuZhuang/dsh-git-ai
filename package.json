@@ -1,7 +1,7 @@
 {
   "name": "dsh-git-ai",
   "description": "DeepSeek Harness plugin that records agent edits with git-ai (agent-v1 checkpoints)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
