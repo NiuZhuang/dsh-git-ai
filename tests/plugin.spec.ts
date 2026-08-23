@@ -25,7 +25,7 @@ const dirs: string[] = []
 afterEach(() => { for (const d of dirs.splice(0)) rmSync(d, { recursive: true, force: true }) })
 
 function configDir(): string {
-  const dir = mkdtempSync(join(tmpdir(), 'dsh-hooks-git-ai-'))
+  const dir = mkdtempSync(join(tmpdir(), 'dsh-git-ai-'))
   dirs.push(dir)
   return dir
 }

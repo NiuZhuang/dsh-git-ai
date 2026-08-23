@@ -1,8 +1,8 @@
-# dsh-hooks-git-ai
+# dsh-git-ai
 
 [English](README.md) | 中文
 
-[GitHub](https://github.com/NiuZhuang/dsh-hooks-git-ai) · [npm](https://www.npmjs.com/package/dsh-hooks-git-ai) · [Issues](https://github.com/NiuZhuang/dsh-hooks-git-ai/issues)
+[GitHub](https://github.com/NiuZhuang/dsh-git-ai) · [npm](https://www.npmjs.com/package/dsh-git-ai) · [Issues](https://github.com/NiuZhuang/dsh-git-ai/issues)
 
 一个 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 插件，把 agent（智能体）编辑了哪些文件、用的是哪个模型、属于哪个会话，记录到 [git-ai](https://github.com/git-ai-project/git-ai) 中。它监听 harness 的 `tools/pre-execute` / `tools/post-execute` 拦截点，把每次相关工具调用翻译成 git-ai 的通用 [`agent-v1`](https://usegitai.com/docs/cli/add-your-agent) checkpoint payload，并在 stdin 上传入该 JSON 后调用 `git-ai checkpoint <preset> --hook-input stdin`。git-ai 本身无需修改；agent 提交后，git-ai 会把归属写入 git notes，并按 tool-model 组合报告 `ai_additions`／`ai_accepted`。
 
@@ -16,19 +16,19 @@
 本包以 profile bundle 形态发布：安装并激活只需要一条命令。
 
 ```sh
-dsh plugin --profile web add dsh-hooks-git-ai
+dsh plugin --profile web add dsh-git-ai
 ```
 
 > **pnpm ≥ 10 提示：** `dsh plugin add` 底层转发给 pnpm，而 pnpm 10+ 会拒绝在 workspace root 上直接添加依赖（`ERR_PNPM_ADDING_TO_ROOT`）。dsh 的 profile 按设计就是 pnpm workspace root，因此在 pnpm ≥ 10 的机器上请使用 `-w`（或一次性在 `~/.dsh/profiles/<profile>/pnpm-workspace.yaml` 中加入 `ignore-workspace-root-check: true`）：
 >
 > ```sh
-> dsh plugin --profile web add -w dsh-hooks-git-ai
+> dsh plugin --profile web add -w dsh-git-ai
 > ```
 
 `dsh plugin` 在 profile 目录内转发给 pnpm，并因为包声明了 `dsh.bundle` 而自动激活该 bundle。不使用 bundle 机制（或在自定义 profile 中加载）时，在 profile 的 `cordis.patch.yml` 中加入一行：
 
 ```yaml
-- dsh-hooks-git-ai:
+- dsh-git-ai:
     gitAiPath: git-ai
     agentName: deepseek-harness
 ```
@@ -36,7 +36,7 @@ dsh plugin --profile web add dsh-hooks-git-ai
 ## 配置
 
 ```ts
-import type { Config } from 'dsh-hooks-git-ai'
+import type { Config } from 'dsh-git-ai'
 const config: Config = {
   gitAiPath: 'git-ai',                  // optional: git-ai executable (bare name resolves through PATH)
   agentName: 'deepseek-harness',        // optional: `agent_name` stamped on every checkpoint

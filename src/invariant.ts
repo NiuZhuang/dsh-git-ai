@@ -1,13 +1,13 @@
 /**
- * Package-owned invariant companion for `@deepseek-ai/dsh-hooks-git-ai`.
- * @module @deepseek-ai/dsh-hooks-git-ai/invariant
+ * Package-owned invariant companion for `@deepseek-ai/dsh-git-ai`.
+ * @module @deepseek-ai/dsh-git-ai/invariant
  */
 
 /* jscpd:ignore-start */
 import type { Context } from '@deepseek-ai/cordis'
 import type { InvariantInstaller } from '@deepseek-ai/dsh-invariants'
 
-const PACKAGE_NAME = 'dsh-hooks-git-ai'
+const PACKAGE_NAME = 'dsh-git-ai'
 
 /** Cordis companion plugin name. */
 export const name = 'hooks-git-ai-invariant'

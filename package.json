@@ -1,7 +1,7 @@
 {
-  "name": "dsh-hooks-git-ai",
+  "name": "dsh-git-ai",
   "description": "DeepSeek Harness plugin that records agent edits with git-ai (agent-v1 checkpoints)",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -27,12 +27,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NiuZhuang/dsh-hooks-git-ai.git"
+    "url": "git+https://github.com/NiuZhuang/dsh-git-ai.git"
   },
   "bugs": {
-    "url": "https://github.com/NiuZhuang/dsh-hooks-git-ai/issues"
+    "url": "https://github.com/NiuZhuang/dsh-git-ai/issues"
   },
-  "homepage": "https://github.com/NiuZhuang/dsh-hooks-git-ai",
+  "homepage": "https://github.com/NiuZhuang/dsh-git-ai",
   "engines": {
     "node": ">=22"
   },

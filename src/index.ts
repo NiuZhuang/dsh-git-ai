@@ -7,7 +7,7 @@
  * `ai_agent` checkpoints after a successful edit, and bash/pwsh tools bracket
  * every run with `pre_shell_command` / `post_shell_command` checkpoints so
  * git-ai's file snapshots attribute whatever the command changed.
- * @module @deepseek-ai/dsh-hooks-git-ai
+ * @module @deepseek-ai/dsh-git-ai
  */
 
 import { isAbsolute, resolve } from 'node:path'

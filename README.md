@@ -1,8 +1,8 @@
-# dsh-hooks-git-ai
+# dsh-git-ai
 
 English | [中文](README.zh.md)
 
-[GitHub](https://github.com/NiuZhuang/dsh-hooks-git-ai) · [npm](https://www.npmjs.com/package/dsh-hooks-git-ai) · [Issues](https://github.com/NiuZhuang/dsh-hooks-git-ai/issues)
+[GitHub](https://github.com/NiuZhuang/dsh-git-ai) · [npm](https://www.npmjs.com/package/dsh-git-ai) · [Issues](https://github.com/NiuZhuang/dsh-git-ai/issues)
 
 A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin that records which files the agent edited, with which model, and in which session into [git-ai](https://github.com/git-ai-project/git-ai). It listens on the harness's `tools/pre-execute` / `tools/post-execute` interception points, translates each relevant tool call into git-ai's generic [`agent-v1`](https://usegitai.com/docs/cli/add-your-agent) checkpoint payload, and invokes `git-ai checkpoint <preset> --hook-input stdin` with that JSON on stdin. git-ai itself is never modified; after the agent commits, git-ai writes the attribution into git notes and reports `ai_additions`/`ai_accepted` per tool-model pair.
 
@@ -16,7 +16,7 @@ A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin tha
 The package ships as a profile bundle: installing it and activating the patch is one command.
 
 ```sh
-dsh plugin --profile web add dsh-hooks-git-ai
+dsh plugin --profile web add dsh-git-ai
 ```
 
 > **pnpm ≥ 10 note:** `dsh plugin add` forwards to pnpm, and pnpm 10+ rejects adding to a
@@ -25,13 +25,13 @@ dsh plugin --profile web add dsh-hooks-git-ai
 > to `~/.dsh/profiles/<profile>/pnpm-workspace.yaml` once):
 >
 > ```sh
-> dsh plugin --profile web add -w dsh-hooks-git-ai
+> dsh plugin --profile web add -w dsh-git-ai
 > ```
 
 `dsh plugin` forwards to pnpm inside your profile directory and auto-activates the bundle because the package declares `dsh.bundle`. Without the bundle mechanism (or to load it in a custom profile), add the row to your profile's `cordis.patch.yml`:
 
 ```yaml
-- dsh-hooks-git-ai:
+- dsh-git-ai:
     gitAiPath: git-ai
     agentName: deepseek-harness
 ```
@@ -39,7 +39,7 @@ dsh plugin --profile web add dsh-hooks-git-ai
 ## Config
 
 ```ts
-import type { Config } from 'dsh-hooks-git-ai'
+import type { Config } from 'dsh-git-ai'
 const config: Config = {
   gitAiPath: 'git-ai',                  // optional: git-ai executable (bare name resolves through PATH)
   agentName: 'deepseek-harness',        // optional: `agent_name` stamped on every checkpoint
