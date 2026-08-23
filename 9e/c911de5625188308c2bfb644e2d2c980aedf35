@@ -1,0 +1,31 @@
+README.md
+  s_1d4c6b58b8a978::t_eccc0f68710ef8 1,5,19,28,34,42
+README.zh.md
+  s_1d4c6b58b8a978::t_148c4360ea2000 1,5,19,25,31,39
+cordis.patch.yml
+  s_1d4c6b58b8a978::t_2967d7f5558a79 1,6
+package.json
+  s_1d4c6b58b8a978::t_e5cdf43f8cf417 2,4,30,33,35
+src/index.ts
+  s_1d4c6b58b8a978::t_27e5110b7e1ae1 10
+src/invariant.ts
+  s_1d4c6b58b8a978::t_a5101dc3f28cc8 2-3,10
+tests/plugin.spec.ts
+  s_1d4c6b58b8a978::t_37998c3f696a47 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "9ec911de5625188308c2bfb644e2d2c980aedf35",
+  "prompts": {},
+  "sessions": {
+    "s_1d4c6b58b8a978": {
+      "agent_id": {
+        "tool": "deepseek-harness",
+        "id": "session-a0f92226-ecc5-4300-a943-bdc263a9477c",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhuang NIU <niu-zhuang@outlook.com>"
+    }
+  }
+}
