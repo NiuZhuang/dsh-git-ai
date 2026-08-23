@@ -1,0 +1,29 @@
+cordis.patch.yml
+  s_1d4c6b58b8a978::t_fc9f0eb7f18bcf 5
+src/index.ts
+  s_1d4c6b58b8a978::t_3ca475dbfa7b27 20,227,234
+src/invariant.ts
+  s_1d4c6b58b8a978::t_9dba0d9399e2fd 13
+tests/invariant.spec.ts
+  s_1d4c6b58b8a978::t_5d0014875c8737 6
+tests/mock-adapter.ts
+  s_1d4c6b58b8a978::t_8b360608cc5785 5
+tests/plugin.spec.ts
+  s_1d4c6b58b8a978::t_b31a2c001426f0 104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.23",
+  "base_commit_sha": "0e6a8e4d7f2745d153040c24eb744b20c1789d67",
+  "prompts": {},
+  "sessions": {
+    "s_1d4c6b58b8a978": {
+      "agent_id": {
+        "tool": "deepseek-harness",
+        "id": "session-a0f92226-ecc5-4300-a943-bdc263a9477c",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhuang NIU <niu-zhuang@outlook.com>"
+    }
+  }
+}
