@@ -2,5 +2,5 @@
 # plugin activates automatically when installed via `dsh plugin add`.
 
 - insert:
-    - id: hooks-git-ai
+    - id: dsh-git-ai
       name: dsh-git-ai

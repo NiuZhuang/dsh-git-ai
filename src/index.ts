@@ -17,7 +17,7 @@ import type { Agent } from '@deepseek-ai/dsh-agent'
 import type { ShellExecutor } from '@deepseek-ai/dsh-shell'
 import type { PostToolDecision, PreToolDecision, ToolExecution } from '@deepseek-ai/dsh-tools'
 
-export const name = 'hooks-git-ai'
+export const name = 'dsh-git-ai'
 export const inject = ['shell']
 
 /** Plugin config: the git-ai executable, identity fields, and checkpoint knobs. */
@@ -224,14 +224,14 @@ async function runCheckpoint(ctx: Context, config: Config, payload: AgentV1Check
       workdir: payload.repo_working_dir,
     }))
     if (result.exitCode !== 0) {
-      ctx.logger.warn(`hooks-git-ai: git-ai checkpoint exited with code ${String(result.exitCode)}: ${result.stderr.text}`)
+      ctx.logger.warn(`dsh-git-ai: git-ai checkpoint exited with code ${String(result.exitCode)}: ${result.stderr.text}`)
     }
   } catch (error: unknown) {
     // The shell executor resolves infrastructure failures (missing binary,
     // unusable workdir) instead of rejecting; this arm is defensive.
     /* v8 ignore start -- a rejection cannot occur in practice, see the shell executor contract */
     const message = error instanceof Error ? error.message : String(error)
-    ctx.logger.warn(`hooks-git-ai: git-ai checkpoint failed: ${message}`)
+    ctx.logger.warn(`dsh-git-ai: git-ai checkpoint failed: ${message}`)
     /* v8 ignore stop */
   }
 }

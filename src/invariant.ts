@@ -10,7 +10,7 @@ import type { InvariantInstaller } from '@deepseek-ai/dsh-invariants'
 const PACKAGE_NAME = 'dsh-git-ai'
 
 /** Cordis companion plugin name. */
-export const name = 'hooks-git-ai-invariant'
+export const name = 'dsh-git-ai-invariant'
 /** Service required before the companion can reserve package ownership. */
 export const inject = ['invariants']
 

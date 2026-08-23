@@ -2,7 +2,7 @@ import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@deepse
 import { CallId, LlmAdapter } from '@deepseek-ai/dsh-llm'
 
 /**
- * Minimal scripted LLM adapter for the hooks-git-ai tests: each model call
+ * Minimal scripted LLM adapter for the dsh-git-ai tests: each model call
  * consumes the next entry in the script. Records every request for
  * assertions. A trimmed copy of the DeepSeek Harness agent-loop test adapter.
  */

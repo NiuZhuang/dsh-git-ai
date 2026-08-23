@@ -101,7 +101,7 @@ async function runTurn(harness: Harness, adapter: MockAdapter): Promise<void> {
   expect(adapter.requests.length).toBeGreaterThan(0)
 }
 
-describe('hooks-git-ai bridge', () => {
+describe('dsh-git-ai bridge', () => {
   it('sends an ai_agent checkpoint after a successful write with identity passthrough', async () => {
     const dir = configDir()
     const fake = fakeGitAi(dir)

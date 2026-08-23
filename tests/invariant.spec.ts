@@ -3,7 +3,7 @@ import { Context } from '@deepseek-ai/cordis'
 import InvariantRegistry from '@deepseek-ai/dsh-invariants'
 import * as Invariant from '../src/invariant.ts'
 
-describe('hooks-git-ai invariant companion', () => {
+describe('dsh-git-ai invariant companion', () => {
   it('registers the package name with the invariants service', async () => {
     const ctx = new Context()
     await ctx.plugin(InvariantRegistry)
