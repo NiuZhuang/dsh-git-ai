@@ -1,5 +1,7 @@
 # dsh-hooks-git-ai
 
+English | [中文](README.zh.md)
+
 [GitHub](https://github.com/NiuZhuang/dsh-hooks-git-ai) · [npm](https://www.npmjs.com/package/dsh-hooks-git-ai) · [Issues](https://github.com/NiuZhuang/dsh-hooks-git-ai/issues)
 
 A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin that records which files the agent edited, with which model, and in which session into [git-ai](https://github.com/git-ai-project/git-ai). It listens on the harness's `tools/pre-execute` / `tools/post-execute` interception points, translates each relevant tool call into git-ai's generic [`agent-v1`](https://usegitai.com/docs/cli/add-your-agent) checkpoint payload, and invokes `git-ai checkpoint <preset> --hook-input stdin` with that JSON on stdin. git-ai itself is never modified; after the agent commits, git-ai writes the attribution into git notes and reports `ai_additions`/`ai_accepted` per tool-model pair.
