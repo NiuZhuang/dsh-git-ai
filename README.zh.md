@@ -6,6 +6,12 @@
 
 一个 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 插件，把 agent（智能体）编辑了哪些文件、用的是哪个模型、属于哪个会话，记录到 [git-ai](https://github.com/git-ai-project/git-ai) 中。它监听 harness 的 `tools/pre-execute` / `tools/post-execute` 拦截点，把每次相关工具调用翻译成 git-ai 的通用 [`agent-v1`](https://usegitai.com/docs/cli/add-your-agent) checkpoint payload，并在 stdin 上传入该 JSON 后调用 `git-ai checkpoint <preset> --hook-input stdin`。git-ai 本身无需修改；agent 提交后，git-ai 会把归属写入 git notes，并按 tool-model 组合报告 `ai_additions`／`ai_accepted`。
 
+## 效果预览
+
+将鼠标悬停在 VS Code 的代码行上，即可看到这段代码是由谁、使用哪个模型、在哪个 DeepSeek Harness 会话中生成的：
+
+![Git AI 代码归属 Popover](https://raw.githubusercontent.com/NiuZhuang/dsh-git-ai/main/docs/image.png)
+
 ## 环境要求
 
 - 通过 npm 安装 DeepSeek Harness（`npx @deepseek-ai/dsh@latest`）——插件以官方 `@deepseek-ai/*` 包为 peer 依赖。

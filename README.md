@@ -6,6 +6,12 @@ English | [中文](README.zh.md)
 
 A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin that records which files the agent edited, with which model, and in which session into [git-ai](https://github.com/git-ai-project/git-ai). It listens on the harness's `tools/pre-execute` / `tools/post-execute` interception points, translates each relevant tool call into git-ai's generic [`agent-v1`](https://usegitai.com/docs/cli/add-your-agent) checkpoint payload, and invokes `git-ai checkpoint <preset> --hook-input stdin` with that JSON on stdin. git-ai itself is never modified; after the agent commits, git-ai writes the attribution into git notes and reports `ai_additions`/`ai_accepted` per tool-model pair.
 
+## Preview
+
+Hover over a line of code in VS Code to see who wrote it, with which model, and in which DeepSeek Harness session it was generated:
+
+![Git AI attribution popover](https://raw.githubusercontent.com/NiuZhuang/dsh-git-ai/main/docs/image.png)
+
 ## Requirements
 
 - DeepSeek Harness installed via npm (`npx @deepseek-ai/dsh@latest`) — the plugin peer-depends on the official `@deepseek-ai/*` packages it ships with.
